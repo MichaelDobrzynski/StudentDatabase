@@ -1,4 +1,4 @@
-Database application designed to maintain students for a university. 
+Java database application designed to maintain students for a university. 
 The priority is managing student enrollments and account balances.
 
 The app can perform the following:
