@@ -5,8 +5,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private int year;
-    private int balance;
-    private String courses;
+    private int tuitionBalance = 0;
+    private String courses = null;
 
     //reminder: static means that value or property is unspecific to object, but rather to entire class
     private static int costOfCourse = 600;
@@ -43,12 +43,29 @@ public class Student {
 
     //enroll in courses
     public void enroll(){
+        do {
+            System.out.println("Enter course to enroll (q for quit): ");
+            Scanner in = new Scanner(System.in);
+            String course = in.nextLine();
 
+            //instead of course != q used equals to be able to break out of loop
+            if (!course.equals("q")) {
+                courses = courses + "\n" + course;
+                tuitionBalance += costOfCourse;
+            }
+            else {
+                System.out.println("BREAK");
+                break;
+            }
+        } while (1 != 0);
+
+        System.out.println("Enrolled in:  " + courses);
+        System.out.println("Tuition balance: $" + tuitionBalance);
     }
 
     //view balance
     public int getBalance() {
-        return balance;
+        return tuitionBalance;
     }
 
     //pay tuition
