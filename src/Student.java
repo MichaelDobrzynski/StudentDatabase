@@ -29,7 +29,7 @@ public class Student {
 
         setStudentID();
 
-        System.out.println(firstName + " " + lastName + ", " + year + ", " + studentID);
+        System.out.println(firstName + " " + lastName + ", " + year + ", " + studentID + "\n");
 
     }
 
@@ -42,8 +42,14 @@ public class Student {
     }
 
     //enroll in courses
+    public void enroll(){
+
+    }
 
     //view balance
+    public int getBalance() {
+        return balance;
+    }
 
     //pay tuition
 
