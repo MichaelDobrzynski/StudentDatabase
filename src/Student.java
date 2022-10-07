@@ -63,7 +63,7 @@ public class Student {
 
     //view balance
     public void viewBalance() {
-        System.out.println("Your balance is: $" + tuitionBalance);
+        System.out.println("Your balance is: $" + tuitionBalance + "\n");
     }
 
     //pay tuition
@@ -73,10 +73,14 @@ public class Student {
         Scanner in = new Scanner(System.in);
         int payment = in.nextInt();
         tuitionBalance = tuitionBalance - payment;
-        System.out.println("Thank you for your payment of $" + payment);
+        System.out.println("Thank you for your payment of $" + payment + "\n");
         viewBalance();
     }
 
     //view status
-
+    public String toString() {
+        return "Name: " + firstName + " " + lastName + "\n"
+                 + "Courses enrolled: " + courses + "\n"
+                 + "Balance: $" + tuitionBalance + "\n";
+    }
 }
