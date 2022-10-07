@@ -59,7 +59,6 @@ public class Student {
         } while (1 != 0);
 
         System.out.println("Enrolled in:  " + courses);
-        System.out.println("Tuition balance: $" + tuitionBalance);
     }
 
     //view balance
@@ -69,6 +68,7 @@ public class Student {
 
     //pay tuition
     public void payTuition() {
+        viewBalance();
         System.out.print("Enter your payment: $");
         Scanner in = new Scanner(System.in);
         int payment = in.nextInt();
