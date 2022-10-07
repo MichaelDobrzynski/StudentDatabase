@@ -6,7 +6,7 @@ public class Student {
     private String lastName;
     private int year;
     private int tuitionBalance = 0;
-    private String courses = null;
+    private String courses = "";
 
     //reminder: static means that value or property is unspecific to object, but rather to entire class
     private static int costOfCourse = 600;
@@ -54,7 +54,6 @@ public class Student {
                 tuitionBalance += costOfCourse;
             }
             else {
-                System.out.println("BREAK");
                 break;
             }
         } while (1 != 0);
@@ -64,11 +63,19 @@ public class Student {
     }
 
     //view balance
-    public int getBalance() {
-        return tuitionBalance;
+    public void viewBalance() {
+        System.out.println("Your balance is: $" + tuitionBalance);
     }
 
     //pay tuition
+    public void payTuition() {
+        System.out.print("Enter your payment: $");
+        Scanner in = new Scanner(System.in);
+        int payment = in.nextInt();
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Thank you for your payment of $" + payment);
+        viewBalance();
+    }
 
     //view status
 
